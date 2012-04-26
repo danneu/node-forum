@@ -1,0 +1,13 @@
+form.form-horizontal(action='/sessions', method='post')
+  fieldset
+    .control-group
+      label.control-label(for="username") Username
+      .controls
+        input.input-xlarge(type="text", id="username", name="username")
+    .control-group
+      label.control-label(for="password") Password
+      .controls
+        input.input-xlarge(type="password", id="password", name="password")
+    .form-actions
+      button.btn.btn-primary(type="submit") Submit
+  

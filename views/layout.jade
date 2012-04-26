@@ -1,0 +1,39 @@
+!!!
+title= "Node Forum - " + title
+link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.css')
+link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap-responsive.css')
+link(rel='stylesheet', href='/stylesheets/style.css')
+
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      a.brand(href="/") Node Forum
+      ul.nav
+        li.active
+          a(href="/") Home
+        li
+          a(href="/members") Members
+      ul.nav.pull-right.user-box
+        if user
+          li: a(href="/")= user
+          li: a.delete(href="/sessions") Logout
+        else
+          li: a(href="/login") Login
+
+        
+
+.container
+  .page-header
+    h1= title
+
+- var flashTypes = ['success', 'error']
+each flashType in flashTypes
+  if flash[flashType]
+    .alert(class="alert-#{flashType}")
+      strong #{flashType}! 
+      = flash[flashType]
+
+!= body
+
+script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+script(type='text/javascript', src='/javascripts/delete.js')

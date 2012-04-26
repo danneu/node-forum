@@ -1,0 +1,11 @@
+table.table
+  thead
+    tr
+      th Topic
+      th Created
+  tbody
+  each topic in topics
+    tr
+      td: a(href="/topics/#{topic._id}")= topic.title
+      td= timeago(topic.createdAt)
+  
